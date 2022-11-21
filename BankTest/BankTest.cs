@@ -16,5 +16,22 @@ namespace BankTest
             //ASSERT
             Assert.AreEqual(guthaben, k.Guthaben);
         }
+
+        [TestMethod]
+        public void Auszahlen_Alle_Guthaben_Auszahlen()
+        {
+            //arrange
+
+
+            Konto k = new Konto(6000);
+            Random r = new Random();
+            int betrag = r.Next(300,6000);
+            // act
+            k.Auszahlen(betrag);
+
+            //assert
+            Assert.AreEqual((6000-betrag), k.Guthaben);
+        }
     }
+
 }
