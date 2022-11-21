@@ -12,9 +12,9 @@ namespace BankTest
             Random r = new Random();
             int guthaben = r.Next(300,6000);
             //ACT
-            Konto K = new Konto(guthaben);
+            Konto k = new Konto(guthaben);
             //ASSERT
-            Assert.AreEqual(guthaben, Konto.Guthaben);
+            Assert.AreEqual(guthaben, k.Guthaben);
         }
     }
 }
