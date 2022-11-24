@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    internal class Konto
+    public class Konto
     {
         private int guthaben;
 
@@ -34,6 +34,12 @@ namespace Bank
             {
                 throw new ArgumentOutOfRangeException("Guthaben nicht ausreichend");
             }
+        }
+
+        public void Aufloesen()
+        {
+            Auszahlen(Guthaben);
+            Console.WriteLine("Konto wurde aufgelößt");
         }
     }
 }
