@@ -9,8 +9,7 @@ namespace BankTest
         public void Konto_Erstellt_Neues_Konto_Objekt_mit_Startguthaben()
         {
             //ARRANGE
-            Random r = new Random();
-            int guthaben = r.Next(300,6000);
+            int guthaben = 45679876;
             //ACT
             Konto k = new Konto(guthaben);
             //ASSERT
@@ -25,8 +24,7 @@ namespace BankTest
 
 
             Konto k = new Konto(6000);
-            Random r = new Random();
-            int betrag = r.Next(300,6000);
+            int betrag = 5679965;
             // act
             k.Auszahlen(betrag);
 
@@ -38,8 +36,7 @@ namespace BankTest
         {
             //arrange
             Konto k = new Konto(0);
-            Random r = new Random();
-            int betrag = r.Next(300, 6000);
+            int betrag = 586585;
 
             //act
 
