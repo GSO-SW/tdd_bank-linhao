@@ -35,5 +35,11 @@ namespace Bank
                 throw new ArgumentOutOfRangeException("Guthaben nicht ausreichend");
             }
         }
+
+        public void Aufloesen()
+        {
+            Auszahlen(Guthaben);
+            Console.WriteLine("Konto wurde aufgelößt");
+        }
     }
 }

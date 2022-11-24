@@ -19,7 +19,7 @@ namespace BankTest
         }
 
         [TestMethod]
-        public void Auszahlen_Alle_Guthaben_Auszahlen()
+        public void Auszahlen_Guthaben_Auszahlen()
         {
             //arrange
 
@@ -48,6 +48,40 @@ namespace BankTest
             //assert
             Assert.AreEqual(betrag, k.Guthaben);
         }
+
+        [TestMethod]
+        public void Aufloesen_Guthaben_komplett_auszahlen_Konto_schlieﬂen()
+        {
+            //ARRANGE
+            Konto k = new Konto(435978);
+
+            //ACT
+
+            k.Aufloesen();
+
+            //ASSERT
+
+            Assert.AreEqual(0, k.Guthaben);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Auszahlen_Guthaben_auszahlen_mehr_als_hat_ErzeugtAusnahme()
+        {
+            //ARRANGE
+
+            Konto k = new Konto(4567890);
+
+            //ACT
+
+            k.Auszahlen(k.Guthaben + 1);
+
+            //ASSERT
+
+            Assert.AreEqual(4567890, k.Guthaben);
+        }
+
     }
 
 }
