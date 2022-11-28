@@ -6,6 +6,7 @@ namespace Bank
     {
         private int guthaben;
         private int kontonummer;
+        private static int lastKontonummer;
 
         public int Guthaben
         {
@@ -28,11 +29,13 @@ namespace Bank
             if (guthaben >= 0)
             {
                 this.guthaben = guthaben;
+                this.kontonummer = lastKontonummer + 1;
+                lastKontonummer = this.kontonummer;
             }
             else
             {
                 throw new ArgumentOutOfRangeException("Guthaben kann nicht negativ sein.");
-            }
+            }            
 
         }
 
