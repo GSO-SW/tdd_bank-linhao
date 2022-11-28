@@ -6,7 +6,7 @@ namespace Bank
     {
         private int guthaben;
         private int kontonummer;
-        private static int lastKontonummer;
+        public static int kontoZaehler;
 
         public int Guthaben
         {
@@ -26,11 +26,12 @@ namespace Bank
 
         public Konto(int guthaben)
         {
+
+
             if (guthaben >= 0)
             {
                 this.guthaben = guthaben;
-                this.kontonummer = lastKontonummer + 1;
-                lastKontonummer = this.kontonummer;
+                kontonummer = ++kontoZaehler;
             }
             else
             {

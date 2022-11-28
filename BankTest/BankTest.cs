@@ -29,7 +29,7 @@ namespace BankTest
             k.Auszahlen(betrag);
 
             //assert
-            Assert.AreEqual((6000-betrag), k.Guthaben);
+            Assert.AreEqual((6000 - betrag), k.Guthaben);
         }
         [TestMethod]
         public void Einzahlen_Guthaben_Einzahlen()
